@@ -1,4 +1,4 @@
-class CreatePupdates < ActiveRecord::Migration
+class CreatePupdates < ActiveRecord::Migration[5.2]
   def change
     create_table :pupdates do |t|
       t.string :title
