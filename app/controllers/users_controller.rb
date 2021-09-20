@@ -24,7 +24,10 @@ class UsersController < ApplicationController
     end
 
     post '/users' do
-      @user = User.new(params)
+      if params[:name] != "" && params[:email] != "" && params[:password] != ""
+        @user = User.new(params)
+      else
+
     end
 
     get '/users/:id' do
