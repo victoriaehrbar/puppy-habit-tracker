@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     end
 
     post '/users' do
-
+      @user = User.new(params)
     end
 
     get '/users/:id' do
