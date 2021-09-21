@@ -9,4 +9,8 @@ class PupdatesController < ApplicationController
             redirect '/'
     end
 
+    if params[:content] != ""
+
+    else
+
 end
