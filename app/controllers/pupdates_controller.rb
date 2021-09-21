@@ -4,4 +4,8 @@ class PupdatesController < ApplicationController
         erb :'pupdates/new'
     end
 
+    post '/pupdates' do
+
+    end
+
 end
