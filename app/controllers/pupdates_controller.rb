@@ -1,7 +1,7 @@
 class PupdatesController < ApplicationController
 
     get '/pupdates/new' do
-        erb
+        erb :'pupdates/new'
     end
 
 end
