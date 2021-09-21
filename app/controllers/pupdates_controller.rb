@@ -1,0 +1,3 @@
+class PupdatesController < ApplicationController
+
+end
