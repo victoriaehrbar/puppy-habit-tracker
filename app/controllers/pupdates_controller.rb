@@ -19,17 +19,17 @@ class PupdatesController < ApplicationController
 end
 
     get '/pupdates/:id' do
-        @pupdate = Pupdate.find(params[:id])
+        set_pupdate
         erb :'/pupdates/show'
     end
 
     get '/pupdates/:id/edit' do
-        @pupdate = Pupdate.find(params[:id])
+        set_pupdate
         erb :'pupdates/edit'
     end
 
     patch '/pupdates/:id' do
-        "Hello World"
+        set_pupdate
     end
 
     private
