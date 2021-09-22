@@ -24,6 +24,7 @@ end
     end
 
     get '/pupdates/:id/edit' do
+        @pupdate = Pupdate.find(params[:id])
         erb :'pupdates/edit'
     end
 end
