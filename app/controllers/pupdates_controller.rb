@@ -17,5 +17,6 @@ class PupdatesController < ApplicationController
 
     get '/pupdates/:id' do
         @pupdate = Pupdate.find(params[:id])
+        erb :'/pupdates/show'
     end
 end
