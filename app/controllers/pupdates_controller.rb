@@ -16,7 +16,6 @@ class PupdatesController < ApplicationController
         redirect '/pupdates/new'
 
     get '/pupdates/:id' do
-        set_pupdate
-        erb :'/pupdates/show'
+        @pupdate = Pupdate.find(params[:id])
     end
 end
