@@ -31,5 +31,11 @@ end
     patch '/pupdates/:id' do
         "Hello World"
     end
-    
+
+    private
+
+    def set_pupdate
+        @pupdate = Pupdate.find(params[:id])
+    end
+
 end
