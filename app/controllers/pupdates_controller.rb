@@ -12,5 +12,5 @@ class PupdatesController < ApplicationController
     if params[:content] != ""
 
     else
-
+        redirect '/pupdates/new'
 end
