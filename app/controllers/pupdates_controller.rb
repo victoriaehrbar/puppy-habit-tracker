@@ -14,4 +14,9 @@ class PupdatesController < ApplicationController
 
     else
         redirect '/pupdates/new'
+
+    get '/journal_entries/:id' do
+        set_journal_entry
+        erb :'/journal_entries/show'
+    end
 end
