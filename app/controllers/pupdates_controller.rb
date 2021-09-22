@@ -5,7 +5,7 @@ class PupdatesController < ApplicationController
     end
 
     post '/pupdates' do
-        if !logged_in
+        if !logged_in?
             redirect '/'
     end
 
