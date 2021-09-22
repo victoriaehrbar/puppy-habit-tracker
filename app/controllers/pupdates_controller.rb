@@ -27,4 +27,9 @@ end
         @pupdate = Pupdate.find(params[:id])
         erb :'pupdates/edit'
     end
+
+    patch '/pupdates/:id' do
+        "Hello World"
+    end
+    
 end
