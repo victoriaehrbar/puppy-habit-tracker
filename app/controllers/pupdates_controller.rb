@@ -10,6 +10,7 @@ class PupdatesController < ApplicationController
     end
 
     if params[:content] != ""
+        @pupdate = Pupdate.create(content: params[:content], user_id: current_user.id, title: params[:title], mood: params[:mood])
 
     else
         redirect '/pupdates/new'
