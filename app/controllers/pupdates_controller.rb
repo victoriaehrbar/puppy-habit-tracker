@@ -24,6 +24,6 @@ end
     end
 
     get '/pupdates/:id/edit' do
-        "Hello World"
+        erb :'pupdates/edit'
     end
 end
