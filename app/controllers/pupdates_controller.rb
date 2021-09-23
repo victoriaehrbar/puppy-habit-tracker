@@ -38,8 +38,12 @@ end
 
     patch '/pupdates/:id' do
         set_pupdate
-        @pupdate.update(content: params[:content])
-        redirect "pupdates/#{pupdate.id}"
+        if logged_in?
+            @pupdate.update(content: params[:content])
+            redirect "pupdates/#{pupdate.id}"
+        else
+            redirect '/'
+        end
     end
 
     private
