@@ -39,8 +39,12 @@ end
     patch '/pupdates/:id' do
         set_pupdate
         if logged_in?
-            @pupdate.update(content: params[:content])
-            redirect "pupdates/#{pupdate.id}"
+            if @pupdate.user == current_user 
+                @pupdate.update(content: params[:content])
+                redirect "pupdates/#{pupdate.id}"
+            else
+                redirect "users/#{current_user.id}"
+            end
         else
             redirect '/'
         end
