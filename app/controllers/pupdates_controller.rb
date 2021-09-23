@@ -55,6 +55,10 @@ end
         end
     end
 
+    delete 'pupdates/:id' do
+        set_pupdate
+    end
+
     private
 
     def set_pupdate
