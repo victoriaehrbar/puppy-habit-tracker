@@ -1,0 +1,9 @@
+All Pupdates
+<% @pupdates.each do |pupdate| %>
+  <h4><a href="/pupdates/<%= pupdate.id %>"><%= pupdate.created_at %></a></h4>
+  <strong><%= pupdate.title %></strong>
+  <p><%= pupdate.content %></p>
+  <p>Mood: <%= pupdate.mood %></p>
+  <p>By <%= pupdate.user.name %></p>
+  <br><br>
+<% end %>
