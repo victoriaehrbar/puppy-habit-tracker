@@ -57,6 +57,12 @@ end
 
     delete 'pupdates/:id' do
         set_pupdate
+        if authorized_to_edit?(@pupdate)
+            @pupdate.destroy
+            redirect '/pupdates'
+        else
+            redirect '/pupdates'
+        end
     end
 
     private
