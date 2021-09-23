@@ -25,7 +25,15 @@ end
 
     get '/pupdates/:id/edit' do
         set_pupdate
-        erb :'pupdates/edit'
+        if logged_in?
+            if @pupdate.user == current_user
+                erb :'pupdates/edit'
+            else
+                redirect "users/#{current_user.id}"
+            end
+        else
+            redirect '/'
+        end
     end
 
     patch '/pupdates/:id' do
