@@ -2,6 +2,7 @@ class PupdatesController < ApplicationController
 
     get '/pupdates' do
         @pupdates = Pupdate.all 
+        erb :'pupdates/index'
     end
     
     get '/pupdates/new' do
