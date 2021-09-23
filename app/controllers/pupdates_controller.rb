@@ -30,7 +30,7 @@ end
 
     patch '/pupdates/:id' do
         set_pupdate
-        @pupdate.update(params)
+        @pupdate.update(content: params[:content])
         redirect "pupdates/#{pupdate.id}"
     end
 
