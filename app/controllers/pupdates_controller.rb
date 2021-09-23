@@ -31,7 +31,7 @@ end
     get '/pupdates/:id/edit' do
         set_pupdate
         if logged_in?
-            if @pupdate.user == current_user
+            if authorized_to_edit(@pupdate)
                 erb :'pupdates/edit'
             else
                 redirect "users/#{current_user.id}"
