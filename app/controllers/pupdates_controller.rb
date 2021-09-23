@@ -30,6 +30,8 @@ end
 
     patch '/pupdates/:id' do
         set_pupdate
+        @pupdate.update(params)
+        redirect "pupdates/#{pupdate.id}"
     end
 
     private
