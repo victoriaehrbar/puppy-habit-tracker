@@ -1,5 +1,9 @@
 class PupdatesController < ApplicationController
 
+    get '/pupdates' do
+        @pupdates = Pupdate.all 
+    end
+    
     get '/pupdates/new' do
         erb :'pupdates/new'
     end
