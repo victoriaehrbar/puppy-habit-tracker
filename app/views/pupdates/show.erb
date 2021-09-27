@@ -7,7 +7,7 @@
 
 
 <% if authorized_to_edit?(@pupdate) %>
-  <a href="/pupdates<%= @pupdate.id %>/edit">Edit</a>
+  <a href="/pupdates/<%= @pupdate.id %>/edit">Edit</a>
   <br><br>
   <form class="" action="/pupdates/<%= @pupdate.id %>" method="post">
 

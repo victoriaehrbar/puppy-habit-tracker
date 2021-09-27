@@ -15,7 +15,7 @@ class PupdatesController < ApplicationController
     if params[:content] != ""
         @pupdate = Pupdate.create(content: params[:content], user_id: current_user.id, title: params[:title])
         flash[:message] = "Pupdate created." if @pupdate.id
-        redirect "/pupdates/#{pupdate.id}"
+        redirect "/pupdates/#{@pupdate.id}"
 
     else
         flash[:errors] = "Please provide content for your pupdate."
@@ -31,7 +31,7 @@ end
     get '/pupdates/:id/edit' do
         redirect_if_not_logged_in
         set_pupdate
-        if authorized_to_edit(@pupdate)
+        if authorized_to_edit?(@pupdate)
             erb :'pupdates/edit'
         else
             redirect "users/#{current_user.id}"
