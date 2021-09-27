@@ -13,7 +13,7 @@ class PupdatesController < ApplicationController
     post '/pupdates' do
         redirect_if_not_logged_in
     if params[:content] != ""
-        @pupdate = Pupdate.create(content: params[:content], user_id: current_user.id, title: params[:title], mood: params[:mood])
+        @pupdate = Pupdate.create(content: params[:content], user_id: current_user.id, title: params[:title])
         flash[:message] = "Pupdate created." if @pupdate.id
         redirect "/pupdates/#{pupdate.id}"
 
