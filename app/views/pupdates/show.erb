@@ -1,7 +1,17 @@
 <h3><%= @pupdate.title %></h3>
 <p><%= @pupdate.content %></p>
 
-# edit
+<p>Created by: <%= @pupdate.user.name %></p>
+
+<p>created on <%= @pupdate.formatted_created_at %></p>
+
+
 <% if authorized_to_edit?(@pupdate) %>
-<a href="/pupdates/<%= @pupdate.id %>/edit">Edit Pupdate</a>
- 
+  <a href="/pupdates<%= @pupdate.id %>/edit">Edit</a>
+  <br><br>
+  <form class="" action="/pupdates/<%= @pupdate.id %>" method="post">
+
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" name="" value="Delete">
+  </form>
+<% end %>
