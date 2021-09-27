@@ -24,8 +24,7 @@ class UsersController < ApplicationController
     end
 
     post '/users' do
-      if params[:name] != "" && params[:email] != "" && params[:password] != ""
-        @user = User.new(params)
+      if @user.save
         session[:user_id] = @user.id 
         flash[:message] = "Account creation successful. Welcome, #{@user.name}!"
         redirect "users/#{@user.id}"
