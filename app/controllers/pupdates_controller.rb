@@ -54,7 +54,7 @@ end
         set_pupdate
         if authorized_to_edit?(@pupdate)
             @pupdate.destroy
-            flash[:message] = "Pudate deleted."
+            flash[:message] = "Pupdate deleted."
             redirect '/pupdates'
         else
             redirect '/pupdates'
