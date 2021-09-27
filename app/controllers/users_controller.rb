@@ -32,6 +32,7 @@ class UsersController < ApplicationController
         flash[:errors] = "Could not create account: #{@user.errors.full_messages.to_sentence}"
         redirect '/signup'
     end
+  end
 
     get '/users/:id' do
       @user = User.find_by(id: params[:id])
@@ -42,7 +43,5 @@ class UsersController < ApplicationController
       session.clear
       redirect '/'
     end
-
-end
 
 end
