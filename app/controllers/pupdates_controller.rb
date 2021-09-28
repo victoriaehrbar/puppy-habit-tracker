@@ -43,7 +43,7 @@ end
         redirect_if_not_logged_in
         set_pupdate
             if @pupdate.user == current_user 
-                @pupdate.update(content: params[:content])
+                @pupdate.update(content: params[:content], title: params[:title])
                 redirect "pupdates/#{@pupdate.id}"
             else
                 redirect "users/#{current_user.id}"
