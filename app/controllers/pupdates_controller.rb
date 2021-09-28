@@ -44,16 +44,16 @@ end
         set_pupdate
             if @pupdate.user == current_user 
                 @pupdate.update(content: params[:content])
-                redirect "pupdates/#{pupdate.id}"
+                redirect "pupdates/#{@pupdate.id}"
             else
                 redirect "users/#{current_user.id}"
             end
         end
 
-    delete 'pupdates/:id' do
+    delete '/pupdates/:id' do
         set_pupdate
         if authorized_to_edit?(@pupdate)
-            @pupdate.destroy
+            @pupdate.delete
             flash[:message] = "Pupdate deleted."
             redirect '/pupdates'
         else
