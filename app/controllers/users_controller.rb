@@ -24,6 +24,7 @@ class UsersController < ApplicationController
     end
 
     post '/users' do
+      @user = User.new(params)
       if @user.save
         session[:user_id] = @user.id 
         flash[:message] = "Account creation successful. Welcome, #{@user.name}!"
