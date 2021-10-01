@@ -20,6 +20,7 @@ class UsersController < ApplicationController
       end
 
     get '/signup' do
+      redirect_if_logged_in
       erb :signup
     end
 
