@@ -24,6 +24,15 @@ class UsersController < ApplicationController
       erb :signup
     end
 
+    get '/about' do
+      # @user = current_user
+      if logged_in?
+        flash[:message] = "Welcome, #{current_user.name}!"
+      else 
+        flash[:message] = "please login"
+      end
+    end
+
     post '/users' do
       @user = User.new(params)
       if @user.save
